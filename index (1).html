@@ -1,0 +1,360 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elitommy Fruity Zobo | Fresh, Fruity Hibiscus Drink in Lagos</title>
+  <meta name="description" content="Bright, fruity, refreshing hibiscus drink. Order Elitommy Fruity Zobo in Lagos – fresh ingredients, fast delivery, event-ready packs." />
+  <meta name="keywords" content="Zobo, hibiscus drink, fruity zobo, Lagos drinks delivery, event drinks, Elitommy" />  <!-- Open Graph / Facebook -->  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Elitommy Fruity Zobo" />
+  <meta property="og:description" content="Bright, fruity, refreshing hibiscus drink. Freshly brewed in Lagos." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556679343-c7306c8b71c5?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:url" content="https://elitommyzobo.example.com" />  <!-- Twitter Card -->  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Elitommy Fruity Zobo" />
+  <meta name="twitter:description" content="Bright, fruity, refreshing hibiscus drink. Freshly brewed in Lagos." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1556679343-c7306c8b71c5?q=80&w=1200&auto=format&fit=crop" />  <!-- Preconnect for fonts -->  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <!-- Favicon (replace with your own) -->  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🍹</text></svg>">  <style>
+    :root {
+      --rose: #e11d48;
+      --rose-700: #be123c;
+      --ring: #fecdd3;
+      --bg: #ffffff;
+      --bg-soft: #fff7fb;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #fce7f3;
+    }
+    /* Reset/Globals */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--text); background: var(--bg); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; border-radius: 16px; }
+
+    /* Layout */
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    header .inner { display:flex; align-items:center; justify-content:space-between; padding: .85rem 0; }
+
+    /* Buttons */
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.85rem 1.1rem; border-radius: 12px; font-weight: 700; border:2px solid transparent; cursor:pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:focus-visible { outline: 2px dashed var(--rose); outline-offset: 3px; }
+    .btn-primary { background: var(--rose); color: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(225,29,72,.25); }
+    .btn-outline { background:#fff; color: var(--rose); border-color: var(--rose); }
+    .btn-outline:hover { background: #fff0f3; }
+
+    /* Sections */
+    section { padding: 3.2rem 0; opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    section.visible { opacity: 1; transform: translateY(0); }
+    .title { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; margin: 0 0 .5rem 0; }
+    .subtitle { color: var(--muted); margin: 0.25rem 0 1rem 0; }
+    .grid { display:grid; gap: 1.2rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .grid-2 { grid-template-columns: 1.1fr .9fr; } }
+
+    /* Cards */
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 1rem; box-shadow: 0 6px 18px rgba(0,0,0,.05); transition: transform .3s ease, box-shadow .3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,.12); }
+
+    /* Inputs */
+    .row { display:flex; gap:.8rem; flex-wrap: wrap; }
+    label { font-weight: 600; font-size: .95rem; display:block; margin:.2rem 0 .3rem; }
+    .input, select, textarea { width: 100%; padding: .85rem 1rem; border-radius: 12px; border: 1px solid #e9d5ff40; outline: none; background:#fff; font: inherit; }
+    .input:focus, select:focus, textarea:focus { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(225,29,72,.12); }
+    textarea { resize: vertical; }
+    .helper { color: var(--muted); font-size: .9rem; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 1.2rem 0; color: var(--muted); font-size: .95rem; }
+
+    /* Hero */
+    .hero { background: linear-gradient(180deg, #fff1f2 0%, #ffffff 45%, #fffafc 100%); }
+    .brand { display:flex; align-items:center; gap:.6rem; font-weight:900; letter-spacing:-0.02em; }
+    .brand-badge { width:36px; height:36px; display:grid; place-items:center; border-radius:12px; background:var(--rose); color:#fff; font-weight:900; }
+
+    /* Gallery */
+    .gallery { display:grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    @media (min-width: 980px) { .gallery { grid-template-columns: repeat(3,1fr); } }
+
+    /* Utility */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>  <!-- Structured Data -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Elitommy Fruity Zobo",
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c8b71c5?q=80&w=1200&auto=format&fit=crop",
+    "address": {"@type":"PostalAddress","addressLocality":"Lagos","addressCountry":"NG"},
+    "telephone": "+2348036877847",
+    "url": "https://elitommyzobo.example.com",
+    "sameAs": [
+      "https://wa.me/2348036877847",
+      "https://www.facebook.com/christiana.adeola"
+    ]
+  }
+  </script>  <!-- Google Analytics 4 (replace G-XXXXXXX with your ID) -->  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>  <!-- Optional: Facebook Pixel (uncomment + replace ID) -->  <!--
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  --></head>
+<body>
+  <!-- Header -->
+  <header aria-label="Site header">
+    <div class="container inner">
+      <a href="#home" class="brand" aria-label="Elitommy Fruity Zobo home">
+        <span class="brand-badge" aria-hidden="true">EZ</span>
+        <span>Elitommy Fruity Zobo</span>
+      </a>
+      <nav aria-label="Primary">
+        <a class="btn btn-outline" href="#flavors">Flavors</a>
+        <a class="btn btn-outline" href="#order">Order</a>
+        <a class="btn btn-primary" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>  <!-- Hero -->  <section id="home" class="hero" aria-labelledby="hero-title">
+    <div class="container grid grid-2" style="align-items:center;">
+      <div>
+        <h1 id="hero-title" class="title">Bright, fruity, and absolutely refreshing.</h1>
+        <p class="subtitle">Premium hibiscus drink infused with real fruit. Freshly brewed in Lagos, delivered chilled.</p>
+        <div class="row" role="group" aria-label="Primary actions">
+          <a class="btn btn-primary" href="#order" id="ctaOrder">Order a Pack</a>
+          <a class="btn btn-outline" href="#flavors">Explore Flavors</a>
+        </div>
+        <a href="about.html" style="display:inline-block; margin-top:15px; padding:10px 20px; background:#d81b60; color:white; text-decoration:none; border-radius:6px;">
+  Learn About Us
+</a>
+      </div>
+      <div>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1556679343-c7306c8b71c5?q=80&w=1200&auto=format&fit=crop" width="900" height="1125" alt="Chilled hibiscus drink with fruit" />
+      </div>
+    </div>
+  </section>  <!-- Flavors -->  <section id="flavors" aria-labelledby="flavors-title">
+    <div class="container">
+      <h2 id="flavors-title" class="title">Signature Flavors</h2>
+      <p class="subtitle">Choose by mood—each crafted with real fruit goodness.</p>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:1.2rem;">
+        <article class="card" aria-label="Classic Hibiscus">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=1200&auto=format&fit=crop" alt="Classic Hibiscus bottle" />
+          <h3>Classic Hibiscus</h3>
+          <p class="subtitle">Tangy & floral</p>
+        </article>
+        <article class="card" aria-label="Pineapple Twist">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop" alt="Pineapple Twist bottle" />
+          <h3>Pineapple Twist</h3>
+          <p class="subtitle">Bright & juicy</p>
+        </article>
+        <article class="card" aria-label="Ginger Zing">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1516685018646-549198525c1b?q=80&w=1200&auto=format&fit=crop" alt="Ginger Zing bottle" />
+          <h3>Ginger Zing</h3>
+          <p class="subtitle">Warm spice</p>
+        </article>
+        <article class="card" aria-label="Citrus Burst">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=1200&auto=format&fit=crop" alt="Citrus Burst bottle" />
+          <h3>Citrus Burst</h3>
+          <p class="subtitle">Lemon‑lime</p>
+        </article>
+      </div>
+    </div>
+  </section>  <!-- Order -->  <section id="order" style="background: var(--bg-soft);" aria-labelledby="order-title">
+    <div class="container grid grid-2" style="gap:1.6rem; align-items:start;">
+      <div>
+        <h2 id="order-title" class="title">Place Your Order</h2>
+        <p class="subtitle">We’ll confirm by WhatsApp and schedule delivery or pickup.</p><form id="orderForm" class="grid" style="gap:1rem;" aria-describedby="orderHelp">
+      <div class="row" style="flex-wrap:wrap;">
+        <div style="flex:1 1 220px; min-width:220px;">
+          <label for="name">Full Name</label>
+          <input class="input" id="name" name="name" autocomplete="name" required aria-required="true" />
+        </div>
+        <div style="flex:1 1 220px; min-width:220px;">
+          <label for="custPhone">Your Phone Number</label>
+          <input class="input" id="custPhone" name="phone" inputmode="tel" placeholder="e.g., 0803 000 0000" required aria-required="true" />
+        </div>
+      </div>
+
+      <div class="row" style="flex-wrap:wrap;">
+        <div style="flex:1 1 220px; min-width:220px;">
+          <label for="flavor">Preferred Flavor</label>
+          <input class="input" id="flavor" name="flavor" list="flavorsList" required aria-required="true" />
+          <datalist id="flavorsList">
+            <option value="Classic Hibiscus"></option>
+            <option value="Pineapple Twist"></option>
+            <option value="Ginger Zing"></option>
+            <option value="Citrus Burst"></option>
+          </datalist>
+        </div>
+        <div style="flex:1 1 220px; min-width:220px;">
+          <label for="pack">Pack Size</label>
+          <select class="input" id="pack" name="pack" required aria-required="true">
+            <option value="">Select a pack</option>
+            <option>6 bottles (330ml)</option>
+            <option>12 bottles (330ml)</option>
+            <option>12 bottles (500ml)</option>
+            <option>Party Dispenser (5L)</option>
+          </select>
+        </div>
+        <div style="flex:1 1 220px; min-width:220px;">
+          <label for="delivery">Delivery Option</label>
+          <select class="input" id="delivery" name="delivery" required aria-required="true">
+            <option value="">Select option</option>
+            <option>Pickup</option>
+            <option>Delivery (In‑town)</option>
+            <option>Delivery (Out‑of‑town)</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="notes">Address / Notes</label>
+        <textarea class="input" id="notes" name="notes" rows="4" placeholder="Estate, landmark, event date, special instructions" required aria-required="true"></textarea>
+      </div>
+
+      <p id="orderHelp" class="helper">On submit, WhatsApp opens with your order details pre‑filled. No extra charges.</p>
+      <button type="submit" class="btn btn-primary" id="submitOrder" aria-label="Submit order and open WhatsApp">Submit Order</button>
+    </form>
+
+    <div class="row" style="margin-top:1rem;">
+      <a class="btn btn-outline" href="tel:08036877847" aria-label="Call 08036877847">📞 Call 08036877847</a>
+      <a class="btn btn-primary" id="directWhatsApp" href="https://wa.me/2348036877847" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬 WhatsApp Us</a>
+      <a class="btn btn-outline" href="https://www.facebook.com/christiana.adeola" target="_blank" rel="noopener" aria-label="Open Facebook profile">👍 Facebook (Christiana Adeola)</a>
+    </div>
+  </div>
+
+  <aside class="card" aria-label="Pricing">
+    <h3 style="margin:.2rem 0 0; font-size:1.2rem; font-weight:800;">Pricing (Sample)</h3>
+    <p>35cl • Pack of 1 — <strong>₦3600</strong></p>
+    <p>33cl • Pack of 6 — <strong>₦21,600</strong></p>
+    <p>50cl • Pack of 1 — <strong>₦6,000</strong></p>
+        <p>50cl • Pack of 6 — <strong>₦36,000</strong></p>
+    <p>Party Dispenser •  — <strong>₦25,000</strong></p>
+    <p class="subtitle">Prices may vary by flavor & location. Bulk & event rates available.</p>
+  </aside>
+</div>
+
+  </section>  <!-- Gallery -->  <section id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <h2 id="gallery-title" class="title">Gallery</h2>
+      <p class="subtitle">A little peek at the fruity goodness.</p>
+      <div class="gallery" style="margin-top:1rem;">
+        <img loading="lazy" src="https://picsum.photos/seed/zobo1/800/600" width="800" height="600" alt="Zobo bottle close-up" />
+        <img loading="lazy" src="https://picsum.photos/seed/zobo2/800/600" width="800" height="600" alt="Refreshing poured zobo" />
+        <img loading="lazy" src="https://picsum.photos/seed/zobo3/800/600" width="800" height="600" alt="Zobo with citrus" />
+        <img loading="lazy" src="https://picsum.photos/seed/zobo4/800/600" width="800" height="600" alt="Event-ready packs" />
+        <img loading="lazy" src="https://picsum.photos/seed/zobo5/800/600" width="800" height="600" alt="Chilled bottles" />
+        <img loading="lazy" src="https://picsum.photos/seed/zobo6/800/600" width="800" height="600" alt="Zobo and small chops" />
+      </div>
+    </div>
+  </section>  <!-- Contact -->  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title" class="title">Get in Touch</h2>
+      <p class="subtitle">We’re always happy to serve you 🍹</p>
+      <div class="row">
+        <a class="btn btn-outline" href="tel:08036877847" aria-label="Call 08036877847">📞 Call 08036877847</a>
+        <a class="btn btn-primary" href="https://wa.me/2348036877847" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬 WhatsApp</a>
+        <a class="btn btn-outline" href="https://www.facebook.com/christiana.adeola" target="_blank" rel="noopener" aria-label="Open Facebook profile">👍 Facebook (Christiana Adeola)</a>
+        <!-- Optional Instagram button (uncomment and replace USERNAME)
+        <a class="btn btn-outline" href="https://instagram.com/USERNAME" target="_blank" rel="noopener" aria-label="Open Instagram profile">📸 Instagram</a>
+        -->
+      </div>
+    </div>
+  </section>  <!-- Footer -->  <footer aria-label="Footer">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:.8rem; flex-wrap:wrap;">
+      <span>© <span id="year"></span> Elitommy Fruity Zobo. All rights reserved.</span>
+      <span class="subtitle">Crafted with ❤ — Fresh • Fruity • Fun</span>
+    </div>
+  </footer>  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Section reveal on scroll (IntersectionObserver)
+    const sections = document.querySelectorAll('section');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.18 });
+    sections.forEach(s => io.observe(s));
+
+    // Utilities
+    const toIntlWhatsApp = (localPhone) => {
+      // Convert 0803... -> 234803... (Nigeria). Keep digits only.
+      const digits = (localPhone || '').replace(/\D/g, '');
+      if (digits.startsWith('0') && digits.length === 11) return '234' + digits.slice(1);
+      if (digits.startsWith('234')) return digits; // already intl
+      return digits; // fallback; WA may still handle
+    };
+
+    // GA4 helper
+    const gaEvent = (name, params={}) => {
+      try { gtag('event', name, params); } catch(_) {}
+    };
+
+    // Order form -> WhatsApp
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const custPhone = document.getElementById('custPhone').value.trim();
+      const flavor = document.getElementById('flavor').value.trim();
+      const pack = document.getElementById('pack').value;
+      const delivery = document.getElementById('delivery').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      // Required checks
+      if(!name || !custPhone || !flavor || !pack || !delivery || !notes){
+        alert('Please fill all fields.');
+        return;
+      }
+
+      // Nigeria phone validation: 11 digits and starts with 0
+      const digitsOnly = custPhone.replace(/\D/g,'');
+      const isNGLocal = digitsOnly.length === 11 && digitsOnly.startsWith('0');
+      const isIntl = digitsOnly.startsWith('234') && digitsOnly.length >= 12 && digitsOnly.length <= 14;
+      if(!(isNGLocal || isIntl)){
+        alert('Enter a valid Nigerian phone number (e.g., 0803 123 4567).');
+        return;
+      }
+
+      // Your WhatsApp business number
+      const businessIntl = '2348036877847'; // 08036877847
+
+      // Build WhatsApp message
+      const message = [
+        '🛒 New Zobo Order',
+        '----------------------',
+        `👤 Name: ${name}`,
+        `📞 Customer Phone: ${custPhone}`,
+        `🥤 Flavor: ${flavor}`,
+        `📦 Pack: ${pack}`,
+        `🚚 Delivery: ${delivery}`,
+        `📍 Notes: ${notes}`,
+        '----------------------',
+        'Thank you!'
+      ].join('\n');
+
+      const url = `https://wa.me/${businessIntl}?text=${encodeURIComponent(message)}`;
+
+      // Analytics event
+      gaEvent('order_submit', { method: 'whatsapp', pack, flavor, delivery });
+
+      // Open WhatsApp
+      window.open(url, '_blank', 'noopener');
+    });
+
+    // Track direct WA clicks
+    document.getElementById('directWhatsApp').addEventListener('click', () => gaEvent('contact_whatsapp'));
+    document.getElementById('ctaOrder').addEventListener('click', () => gaEvent('cta_order_click'));
+  </script></body>
+</html>
